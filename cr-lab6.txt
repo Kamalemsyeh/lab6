@@ -1,0 +1,26 @@
+1 - env | grep HOME
+    Output : HOME=/home/kl
+2 - echo $PATH
+    Output : /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+    PATH est une variable d'environnement qui contient une liste des dossiers où le système cherche des executables demandés par
+    User comme "cd,rm" dans "/bin". 
+4 - sudo mv process.sh /opt/
+5 - export PATH=$PATH:/opt 
+    On rajoute le répertoire "opt" à la variable PATH 
+    On execute le script de n'importe quel endroit en tappant la commande: process.sh
+6 - Output :   process.sh: command not found
+7-  On tape: ls -a
+    Output : 
+     .              .cache     .gitconfig  Pictures  .sudo_as_admin_successful
+     ..             .config    .gnupg      .profile  Templates
+     .bash_history  Desktop    .local      Public    Videos
+     .bash_logout   Documents  .mozilla    snap      .viminfo
+     .bashrc        Downloads  Music       .ssh
+    Le fichier qui nous intéresse est (.bashrc)
+    On rajoute à la fin du fichier notre path et un alias (process) pour appeler le script: 
+    export PATH=$PATH:/opt 
+    alias process=/opt/process.sh
+    On enregistre les modifications dans le fichier et on tape :
+    source .bashrc % Pour prendre en considération les modifications enregistrées
+    
+    
